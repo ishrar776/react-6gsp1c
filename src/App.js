@@ -46,6 +46,14 @@ export default function App() {
         ></input>
       </p>
       <p>
+        <input
+          type="text"
+          onChange={handleChanges}
+          value={values.message}
+          name="message"
+        ></input>
+      </p>
+      <p>
         <input type="submit" />
       </p>
     </form>
