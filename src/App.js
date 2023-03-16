@@ -2,13 +2,14 @@ import React, { useEffect, useState } from 'react';
 import './style.css';
 
 export default function App() {
+  const [chkBox, setChkBox] = useState(false);
   const [values, setValues] = useState({
     message: '',
-    chktest: '',
+    chktest: chkBox,
   });
-  const [chkBox, setChkBox] = useState(false);
   const [isSubmit, setIsSubmit] = useState(false);
   const handleChanges = (e) => {
+    setChkBox(e.target.checked);
     const name = e.target.name;
     const value = e.target.value;
     setValues({ ...values, [name]: value });
@@ -19,6 +20,7 @@ export default function App() {
     if (!isSubmit) {
       console.log('israr hey');
       console.log('values of check click' + chkBox);
+      console.log('values of check click innner' + values.chktest);
       const allData = { ...values };
       const requestOptions = {
         method: 'POST',
@@ -51,8 +53,8 @@ export default function App() {
       <p>
         <input
           type="checkbox"
-          onChange={(e) => setChkBox(e.target.checked)}
-          value={chkBox}
+          onChange={handleChanges}
+          value={values.chktest}
           name="chktest"
         ></input>
       </p>
