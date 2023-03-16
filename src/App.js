@@ -4,7 +4,9 @@ import './style.css';
 export default function App() {
   const [values, setValues] = useState({
     message: '',
+    chktest: '',
   });
+  const [chkBox, setChkBox] = useState(false);
   const [isSubmit, setIsSubmit] = useState(false);
   const handleChanges = (e) => {
     const name = e.target.name;
@@ -14,8 +16,9 @@ export default function App() {
   const submitdata = (e) => {
     e.preventDefault();
     setIsSubmit(true);
-    if (isSubmit) {
+    if (!isSubmit) {
       console.log('israr hey');
+      console.log('values of check click' + chkBox);
       const allData = { ...values };
       const requestOptions = {
         method: 'POST',
@@ -47,10 +50,10 @@ export default function App() {
       </p>
       <p>
         <input
-          type="text"
-          onChange={handleChanges}
-          value={values.message}
-          name="message"
+          type="checkbox"
+          onChange={(e) => setChkBox(e.target.checked)}
+          value={chkBox}
+          name="chktest"
         ></input>
       </p>
       <p>
