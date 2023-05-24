@@ -37,7 +37,7 @@ export default function App() {
   const submitdata = (e) => {
     e.preventDefault();
     setIsSubmit(true);
-    if (isSubmit) {
+    if (!isSubmit) {
       console.log('israr hey');
       console.log('values of check click' + chkBox);
       console.log('values of check click innner' + values.chktest);
