@@ -8,12 +8,7 @@ export default function App() {
   useEffect(() => {
     setProductList(productName);
   }, []);
-  const [chkBox, setChkBox] = useState(false);
-  const [isSubmit, setIsSubmit] = useState(false);
-  const [values, setValues] = useState({
-    message: '',
-    chktest: chkBox,
-  });
+
   const [valueslist, setValueslist] = useState({
     listadd: '',
   });
@@ -28,6 +23,12 @@ export default function App() {
     const value = e.target.value;
     setProductList({ ...productName, [name]: value });
   };
+  const [chkBox, setChkBox] = useState(false);
+  const [isSubmit, setIsSubmit] = useState(false);
+  const [values, setValues] = useState({
+    message: '',
+    chktest: chkBox,
+  });
   const handleChanges = (e) => {
     setChkBox(e.target.checked);
     const name = e.target.name;
