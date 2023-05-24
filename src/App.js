@@ -17,17 +17,10 @@ export default function App() {
   const [valueslist, setValueslist] = useState({
     listadd: '',
   });
-
   const addlistItem = (e) => {
     const name1 = e.target.name;
     const value1 = e.target.value;
     setValueslist({ ...valueslist, [name1]: value1 });
-  };
-  const handleChanges = (e) => {
-    setChkBox(e.target.checked);
-    const name = e.target.name;
-    const value = e.target.value;
-    setValues({ ...values, [name]: value });
   };
   const addNamelist = (e) => {
     console.log('add to list item');
@@ -35,6 +28,13 @@ export default function App() {
     const value = e.target.value;
     setProductList({ ...productName, [name]: value });
   };
+  const handleChanges = (e) => {
+    setChkBox(e.target.checked);
+    const name = e.target.name;
+    const value = e.target.value;
+    setValues({ ...values, [name]: value });
+  };
+
   const submitdata = (e) => {
     e.preventDefault();
     setIsSubmit(true);
