@@ -3,7 +3,11 @@ import './style.css';
 
 export default function App() {
   let productName = [];
-  productName = ['israr', 'khan', 'awnish'];
+  productName = [
+    { nameone: 'israr' },
+    { nameone: 'khan' },
+    { nameone: 'awnish' },
+  ];
   const [chkBox, setChkBox] = useState(false);
   const [values, setValues] = useState({
     message: '',
@@ -63,7 +67,7 @@ export default function App() {
       <p>
         <ul>
           {productName.map((item) => (
-            <li>israr</li>
+            <li>{item}</li>
           ))}
         </ul>
       </p>
