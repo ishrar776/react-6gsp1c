@@ -4,18 +4,6 @@ import './style.css';
 export default function App() {
   const [input, setInput] = useState('');
   const [todoList, setTodoList] = useState([]);
-
-  const [valueslist, setValueslist] = useState([]);
-  const addlistItem = (e) => {
-    const value1 = e.target.value;
-    setValueslist([...valueslist, value1]);
-  };
-  const addNamelist = (e) => {
-    e.preventDefault();
-    //const value1 = e.target.value;
-    //setValueslist([...valueslist, value1]);
-    console.log('add to list itemfirst' + Object.values(valueslist));
-  };
   const handleClick = (e) => {
     e.preventDefault();
     const id = todoList.length + 1;
