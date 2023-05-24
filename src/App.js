@@ -2,19 +2,27 @@ import React, { useEffect, useState } from 'react';
 import './style.css';
 
 export default function App() {
+  const [input, setInput] = useState('');
+  const [todoList, setTodoList] = useState([]);
+  const [completedTaskCount, setCompletedTaskCount] = useState(0);
+
   const [valueslist, setValueslist] = useState([]);
   const addlistItem = (e) => {
     const value1 = e.target.value;
-    //setValueslist({ ...valueslist, value1 });
     setValueslist([...valueslist, value1]);
-    //setValueslist([value1]);
   };
   const addNamelist = (e) => {
     e.preventDefault();
-    const value1 = e.target.value;
-    //setValueslist({ ...valueslist, value1 });
-    setValueslist([...valueslist, value1]);
+    setValueslist((prev) => [...prev]);
+    //const value1 = e.target.value;
+    //setValueslist([...valueslist, value1]);
     console.log('add to list itemfirst' + Object.values(valueslist));
+  };
+  const handleClick = (e) => {
+    e.preventDefault();
+    const id = valueslist.length + 1;
+    setValueslist((prev) => [...prev]);
+    //setInput('');
   };
   const [chkBox, setChkBox] = useState(false);
   const [isSubmit, setIsSubmit] = useState(false);
@@ -57,9 +65,14 @@ export default function App() {
     <form>
       <h1>NAB (national Bank of Austulia)</h1>
       <p>
-        <input type="text" onChange={addlistItem} name="listadd"></input>
+        {/* <input type="text" onChange={addlistItem} name="listadd"></input> */}
+        <input
+          type="text"
+          value={input}
+          onInput={(e) => setInput(e.target.value)}
+        ></input>
 
-        <input type="submit" onClick={addNamelist} />
+        <input type="submit" onClick={handleClick} />
       </p>
       <p>
         <input
