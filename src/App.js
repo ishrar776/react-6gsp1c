@@ -9,19 +9,19 @@ export default function App() {
   //   setProductList(productName);
   // }, []);
 
-  // const [valueslist, setValueslist] = useState({
-  //   listadd: '',
-  // });
-  const [valueslist, setValueslist] = useState([]);
+  const [valueslist, setValueslist] = useState({
+    listadd: '',
+  });
+  //const [valueslist, setValueslist] = useState([]);
   const addlistItem = (e) => {
     const name1 = e.target.name;
     const value1 = e.target.value;
-    setValueslist({ ...valueslist, [name1]: value1 });
+    //setValueslist({ ...valueslist, [name1]: value1 });
   };
   const addNamelist = (e) => {
     console.log('add to list item');
-    const name = e.target.name;
-    const value = e.target.value;
+    //const name = e.target.name;
+    //const value = e.target.value;
     //setValueslist({ ...productName, [name]: value });
   };
   const [chkBox, setChkBox] = useState(false);
@@ -69,10 +69,11 @@ export default function App() {
         <input
           type="text"
           onChange={addlistItem}
-          value={valueslist.listadd}
+          value={'israr'}
           name="listadd"
         ></input>
-        <button onClick={addNamelist}>addList</button>
+        {/* <button onClick={addNamelist}>addList</button> */}
+        <input type="submit" onClick={addNamelist} />
       </p>
       <p>
         <input
