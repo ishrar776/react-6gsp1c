@@ -22,7 +22,7 @@ export default function App() {
     console.log('add to list item');
     const name = e.target.name;
     const value = e.target.value;
-    setValueslist({ ...productName, [name]: value });
+    //setValueslist({ ...productName, [name]: value });
   };
   const [chkBox, setChkBox] = useState(false);
   const [isSubmit, setIsSubmit] = useState(false);
