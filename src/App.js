@@ -7,10 +7,13 @@ export default function App() {
     const value1 = e.target.value;
     //setValueslist({ ...valueslist, value1 });
     setValueslist([...valueslist, value1]);
+    //setValueslist([value1]);
   };
-  //const [showlist, setShowlist] = useState([]);
   const addNamelist = (e) => {
     e.preventDefault();
+    const value1 = e.target.value;
+    //setValueslist({ ...valueslist, value1 });
+    setValueslist([...valueslist, value1]);
     console.log('add to list itemfirst' + Object.values(valueslist));
   };
   const [chkBox, setChkBox] = useState(false);
@@ -55,7 +58,7 @@ export default function App() {
       <h1>NAB (national Bank of Austulia)</h1>
       <p>
         <input type="text" onChange={addlistItem} name="listadd"></input>
-        {/* <button onClick={addNamelist}>addList</button> */}
+
         <input type="submit" onClick={addNamelist} />
       </p>
       <p>
