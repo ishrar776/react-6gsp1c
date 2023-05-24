@@ -5,12 +5,13 @@ export default function App() {
   const [valueslist, setValueslist] = useState([]);
   const addlistItem = (e) => {
     const value1 = e.target.value;
-    setValueslist({ ...valueslist, value1 });
-    //console.log('onchange to list item' + e.target.value);
+    //setValueslist({ ...valueslist, value1 });
+    setValueslist([...valueslist, value1]);
   };
+  //const [showlist, setShowlist] = useState([]);
   const addNamelist = (e) => {
     e.preventDefault();
-    console.log('add to list item' + valueslist);
+    console.log('add to list itemfirst' + Object.values(valueslist));
   };
   const [chkBox, setChkBox] = useState(false);
   const [isSubmit, setIsSubmit] = useState(false);
@@ -51,7 +52,7 @@ export default function App() {
   };
   return (
     <form>
-      <h1>Hello StackBlitz!</h1>
+      <h1>NAB (national Bank of Austulia)</h1>
       <p>
         <input type="text" onChange={addlistItem} name="listadd"></input>
         {/* <button onClick={addNamelist}>addList</button> */}
@@ -73,13 +74,13 @@ export default function App() {
           name="chktest"
         ></input>
       </p>
-      {/* <p>
+      <p>
         <ul>
           {valueslist.map((item) => (
             <li>{item}</li>
           ))}
         </ul>
-      </p> */}
+      </p>
       <p>
         <input type="submit" onClick={submitdata} />
       </p>
