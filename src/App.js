@@ -3,7 +3,7 @@ import './style.css';
 
 export default function App() {
   let productName = [];
-  productName = ['israr', 'khan', 'awnish'];
+  //productName = ['israr', 'khan', 'awnish'];
   const [productList, setProductList] = useState([]);
   useEffect(() => {
     setProductList(productName);
@@ -14,11 +14,22 @@ export default function App() {
     chktest: chkBox,
   });
   const [isSubmit, setIsSubmit] = useState(false);
+  const handleChangesl = (e) => {
+    const name = e.target.name;
+    const value = e.target.value;
+    setValues({ ...values, [name]: value });
+  };
   const handleChanges = (e) => {
     setChkBox(e.target.checked);
     const name = e.target.name;
     const value = e.target.value;
     setValues({ ...values, [name]: value });
+  };
+  const addNamelist = (e) => {
+    console.log('add to list item');
+    const name = e.target.name;
+    const value = e.target.value;
+    setProductList({ ...productName, [name]: value });
   };
   const submitdata = (e) => {
     e.preventDefault();
@@ -48,6 +59,15 @@ export default function App() {
   return (
     <form onSubmit={submitdata}>
       <h1>Hello StackBlitz!</h1>
+      <p>
+        <input
+          type="text"
+          onChange={handleChangesl}
+          value={values.message}
+          name="list"
+        ></input>
+        <button onClick={addNamelist}>addList</button>
+      </p>
       <p>
         <input
           type="text"
