@@ -64,7 +64,7 @@ export default function App() {
           type="text"
           onChange={handleChangesl}
           value={values.message}
-          name="list"
+          name="listadd"
         ></input>
         <button onClick={addNamelist}>addList</button>
       </p>
