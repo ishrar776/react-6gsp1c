@@ -9,6 +9,7 @@ export default function App() {
     setProductList(productName);
   }, []);
   const [chkBox, setChkBox] = useState(false);
+  const [isSubmit, setIsSubmit] = useState(false);
   const [values, setValues] = useState({
     message: '',
     chktest: chkBox,
@@ -16,7 +17,7 @@ export default function App() {
   const [valueslist, setValueslist] = useState({
     listadd: '',
   });
-  const [isSubmit, setIsSubmit] = useState(false);
+
   const addlistItem = (e) => {
     const name1 = e.target.name;
     const value1 = e.target.value;
