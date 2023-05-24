@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import './style.css';
 
 export default function App() {
+  let productName = [];
+  productName = ['israr', 'khan', 'awnish'];
   const [chkBox, setChkBox] = useState(false);
   const [values, setValues] = useState({
     message: '',
@@ -57,6 +59,13 @@ export default function App() {
           value={values.chktest}
           name="chktest"
         ></input>
+      </p>
+      <p>
+        <ul>
+          {productName.map((item) => (
+            <li>israr</li>
+          ))}
+        </ul>
       </p>
       <p>
         <input type="submit" />
