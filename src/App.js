@@ -2,27 +2,13 @@ import React, { useEffect, useState } from 'react';
 import './style.css';
 
 export default function App() {
-  // let productName = [];
-  // productName = ['israr', 'khan', 'awnish'];
-  // const [productList, setProductList] = useState([]);
-  // useEffect(() => {
-  //   setProductList(productName);
-  // }, []);
-
-  const [valueslist, setValueslist] = useState({
-    listadd: '',
-  });
-  //const [valueslist, setValueslist] = useState([]);
+  const [valueslist, setValueslist] = useState([]);
   const addlistItem = (e) => {
-    const name1 = e.target.name;
     const value1 = e.target.value;
-    //setValueslist({ ...valueslist, [name1]: value1 });
+    setValueslist({ ...valueslist, value1 });
   };
   const addNamelist = (e) => {
     console.log('add to list item');
-    //const name = e.target.name;
-    //const value = e.target.value;
-    //setValueslist({ ...productName, [name]: value });
   };
   const [chkBox, setChkBox] = useState(false);
   const [isSubmit, setIsSubmit] = useState(false);
@@ -36,7 +22,6 @@ export default function App() {
     const value = e.target.value;
     setValues({ ...values, [name]: value });
   };
-
   const submitdata = (e) => {
     e.preventDefault();
     setIsSubmit(true);
@@ -66,12 +51,7 @@ export default function App() {
     <form>
       <h1>Hello StackBlitz!</h1>
       <p>
-        <input
-          type="text"
-          onChange={addlistItem}
-          value={valueslist.listadd}
-          name="listadd"
-        ></input>
+        <input type="text" onChange={addlistItem} name="listadd"></input>
         {/* <button onClick={addNamelist}>addList</button> */}
         <input type="submit" onClick={addNamelist} />
       </p>
@@ -91,13 +71,13 @@ export default function App() {
           name="chktest"
         ></input>
       </p>
-      {/* <p>
+      <p>
         <ul>
           {valueslist.map((item) => (
             <li>{item}</li>
           ))}
         </ul>
-      </p> */}
+      </p>
       <p>
         <input type="submit" onClick={submitdata} />
       </p>
