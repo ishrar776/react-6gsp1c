@@ -3,11 +3,11 @@ import './style.css';
 
 export default function App() {
   let productName = [];
-  //productName = ['israr', 'khan', 'awnish'];
+  productName = ['israr', 'khan', 'awnish'];
   const [productList, setProductList] = useState([]);
-  // useEffect(() => {
-  //   setProductList(productName);
-  // }, []);
+  useEffect(() => {
+    setProductList(productName);
+  }, []);
   const [chkBox, setChkBox] = useState(false);
   const [values, setValues] = useState({
     message: '',
