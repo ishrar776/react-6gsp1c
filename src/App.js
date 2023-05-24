@@ -4,8 +4,6 @@ import './style.css';
 export default function App() {
   const [input, setInput] = useState('');
   const [todoList, setTodoList] = useState([]);
-  const [completedTaskCount, setCompletedTaskCount] = useState(0);
-
   const [valueslist, setValueslist] = useState([]);
   const addlistItem = (e) => {
     const value1 = e.target.value;
@@ -13,16 +11,22 @@ export default function App() {
   };
   const addNamelist = (e) => {
     e.preventDefault();
-    setValueslist((prev) => [...prev]);
     //const value1 = e.target.value;
     //setValueslist([...valueslist, value1]);
     console.log('add to list itemfirst' + Object.values(valueslist));
   };
   const handleClick = (e) => {
     e.preventDefault();
-    const id = valueslist.length + 1;
-    setValueslist((prev) => [...prev]);
-    //setInput('');
+    const id = todoList.length + 1;
+    setTodoList((prev) => [
+      ...prev,
+      {
+        id: id,
+        task: input,
+        complete: false,
+      },
+    ]);
+    setInput('');
   };
   const [chkBox, setChkBox] = useState(false);
   const [isSubmit, setIsSubmit] = useState(false);
@@ -90,13 +94,19 @@ export default function App() {
           name="chktest"
         ></input>
       </p>
-      <p>
+      {/* <p>
         <ul>
           {valueslist.map((item) => (
             <li>{item}</li>
           ))}
         </ul>
-      </p>
+      </p> */}
+      <ul>
+        {todoList.map((todo) => {
+          return <div id={todo.id}>{todo.task}</div>;
+        })}
+      </ul>
+      ;
       <p>
         <input type="submit" onClick={submitdata} />
       </p>
