@@ -4,6 +4,7 @@ import './style.css';
 export default function App() {
   const [input, setInput] = useState('');
   const [todoList, setTodoList] = useState([]);
+
   const [valueslist, setValueslist] = useState([]);
   const addlistItem = (e) => {
     const value1 = e.target.value;
@@ -23,7 +24,6 @@ export default function App() {
       {
         id: id,
         task: input,
-        complete: false,
       },
     ]);
     setInput('');
@@ -67,9 +67,8 @@ export default function App() {
   };
   return (
     <form>
-      <h1>NAB (national Bank of Austulia)</h1>
+      <h1>NAB (National Bank of Austulia)</h1>
       <p>
-        {/* <input type="text" onChange={addlistItem} name="listadd"></input> */}
         <input
           type="text"
           value={input}
@@ -94,19 +93,11 @@ export default function App() {
           name="chktest"
         ></input>
       </p>
-      {/* <p>
-        <ul>
-          {valueslist.map((item) => (
-            <li>{item}</li>
-          ))}
-        </ul>
-      </p> */}
       <ul>
         {todoList.map((todo) => {
-          return <div id={todo.id}>{todo.task}</div>;
+          return <li id={todo.id}>{todo.task}</li>;
         })}
       </ul>
-      ;
       <p>
         <input type="submit" onClick={submitdata} />
       </p>
