@@ -13,11 +13,14 @@ export default function App() {
     message: '',
     chktest: chkBox,
   });
+  const [valueslist, setValueslist] = useState({
+    listadd: '',
+  });
   const [isSubmit, setIsSubmit] = useState(false);
   const handleChangesl = (e) => {
     const name = e.target.name;
     const value = e.target.value;
-    setValues({ ...values, [name]: value });
+    setValueslist({ ...valueslist, [name]: value });
   };
   const handleChanges = (e) => {
     setChkBox(e.target.checked);
