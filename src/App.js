@@ -60,7 +60,7 @@ export default function App() {
     }
   };
   return (
-    <form onSubmit={submitdata}>
+    <form>
       <h1>Hello StackBlitz!</h1>
       <p>
         <input
@@ -95,7 +95,7 @@ export default function App() {
         </ul>
       </p>
       <p>
-        <input type="submit" />
+        <input type="submit" onClick={submitdata} />
       </p>
     </form>
   );
