@@ -8,6 +8,11 @@ export default function App() {
     { nameone: 'khan' },
     { nameone: 'awnish' },
   ];
+  const [productList, setProductList] = useState([]);
+  useEffect(() => {
+    setProductList(productName);
+  }, []);
+
   const [chkBox, setChkBox] = useState(false);
   const [values, setValues] = useState({
     message: '',
@@ -66,8 +71,8 @@ export default function App() {
       </p>
       <p>
         <ul>
-          {productName.map((item) => (
-            <li>{item}</li>
+          {productList.map((item) => (
+            <li>{item.productList}</li>
           ))}
         </ul>
       </p>
