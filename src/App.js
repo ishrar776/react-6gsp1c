@@ -69,7 +69,7 @@ export default function App() {
         <input
           type="text"
           onChange={addlistItem}
-          value={'israr'}
+          value={valueslist.listadd}
           name="listadd"
         ></input>
         {/* <button onClick={addNamelist}>addList</button> */}
@@ -91,13 +91,13 @@ export default function App() {
           name="chktest"
         ></input>
       </p>
-      <p>
+      {/* <p>
         <ul>
           {valueslist.map((item) => (
             <li>{item}</li>
           ))}
         </ul>
-      </p>
+      </p> */}
       <p>
         <input type="submit" onClick={submitdata} />
       </p>
