@@ -2,16 +2,17 @@ import React, { useEffect, useState } from 'react';
 import './style.css';
 
 export default function App() {
-  let productName = [];
-  productName = ['israr', 'khan', 'awnish'];
-  const [productList, setProductList] = useState([]);
-  useEffect(() => {
-    setProductList(productName);
-  }, []);
+  // let productName = [];
+  // productName = ['israr', 'khan', 'awnish'];
+  // const [productList, setProductList] = useState([]);
+  // useEffect(() => {
+  //   setProductList(productName);
+  // }, []);
 
-  const [valueslist, setValueslist] = useState({
-    listadd: '',
-  });
+  // const [valueslist, setValueslist] = useState({
+  //   listadd: '',
+  // });
+  const [valueslist, setValueslist] = useState([]);
   const addlistItem = (e) => {
     const name1 = e.target.name;
     const value1 = e.target.value;
@@ -21,7 +22,7 @@ export default function App() {
     console.log('add to list item');
     const name = e.target.name;
     const value = e.target.value;
-    setProductList({ ...productName, [name]: value });
+    setValueslist({ ...productName, [name]: value });
   };
   const [chkBox, setChkBox] = useState(false);
   const [isSubmit, setIsSubmit] = useState(false);
@@ -91,7 +92,7 @@ export default function App() {
       </p>
       <p>
         <ul>
-          {productList.map((item) => (
+          {valueslist.map((item) => (
             <li>{item}</li>
           ))}
         </ul>
