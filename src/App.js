@@ -3,16 +3,11 @@ import './style.css';
 
 export default function App() {
   let productName = [];
-  productName = [
-    { nameone: 'israr' },
-    { nameone: 'khan' },
-    { nameone: 'awnish' },
-  ];
+  productName = ['israr', 'khan', 'awnish'];
   const [productList, setProductList] = useState([]);
   useEffect(() => {
     setProductList(productName);
   }, []);
-
   const [chkBox, setChkBox] = useState(false);
   const [values, setValues] = useState({
     message: '',
@@ -28,7 +23,7 @@ export default function App() {
   const submitdata = (e) => {
     e.preventDefault();
     setIsSubmit(true);
-    if (!isSubmit) {
+    if (isSubmit) {
       console.log('israr hey');
       console.log('values of check click' + chkBox);
       console.log('values of check click innner' + values.chktest);
@@ -72,7 +67,7 @@ export default function App() {
       <p>
         <ul>
           {productList.map((item) => (
-            <li>{item.productList}</li>
+            <li>{item}</li>
           ))}
         </ul>
       </p>
