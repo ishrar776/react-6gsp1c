@@ -6,9 +6,11 @@ export default function App() {
   const addlistItem = (e) => {
     const value1 = e.target.value;
     setValueslist({ ...valueslist, value1 });
+    //console.log('onchange to list item' + e.target.value);
   };
   const addNamelist = (e) => {
-    console.log('add to list item');
+    e.preventDefault();
+    console.log('add to list item' + valueslist);
   };
   const [chkBox, setChkBox] = useState(false);
   const [isSubmit, setIsSubmit] = useState(false);
@@ -71,13 +73,13 @@ export default function App() {
           name="chktest"
         ></input>
       </p>
-      <p>
+      {/* <p>
         <ul>
           {valueslist.map((item) => (
             <li>{item}</li>
           ))}
         </ul>
-      </p>
+      </p> */}
       <p>
         <input type="submit" onClick={submitdata} />
       </p>
