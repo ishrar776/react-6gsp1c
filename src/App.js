@@ -5,9 +5,9 @@ export default function App() {
   let productName = [];
   //productName = ['israr', 'khan', 'awnish'];
   const [productList, setProductList] = useState([]);
-  useEffect(() => {
-    setProductList(productName);
-  }, []);
+  // useEffect(() => {
+  //   setProductList(productName);
+  // }, []);
   const [chkBox, setChkBox] = useState(false);
   const [values, setValues] = useState({
     message: '',
@@ -17,10 +17,10 @@ export default function App() {
     listadd: '',
   });
   const [isSubmit, setIsSubmit] = useState(false);
-  const handleChangesl = (e) => {
-    const name = e.target.name;
-    const value = e.target.value;
-    setValueslist({ ...valueslist, [name]: value });
+  const addlistItem = (e) => {
+    const name1 = e.target.name;
+    const value1 = e.target.value;
+    setValueslist({ ...valueslist, [name1]: value1 });
   };
   const handleChanges = (e) => {
     setChkBox(e.target.checked);
@@ -65,8 +65,8 @@ export default function App() {
       <p>
         <input
           type="text"
-          onChange={handleChangesl}
-          value={values.message}
+          onChange={addlistItem}
+          value={valueslist.listadd}
           name="listadd"
         ></input>
         <button onClick={addNamelist}>addList</button>
