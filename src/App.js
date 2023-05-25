@@ -16,14 +16,16 @@ export default function App() {
     ]);
     setInput('');
   };
-  const [chkBox, setChkBox] = useState(false);
+  //const [chkBox, setChkBox] = useState(false);
   const [isSubmit, setIsSubmit] = useState(false);
   const [values, setValues] = useState({
-    message: '',
-    chktest: chkBox,
+    id: 8,
+    name: '',
+    year: 2023,
+    color: '#C74375',
+    pantone_value: '19-1669',
   });
   const handleChanges = (e) => {
-    setChkBox(e.target.checked);
     const name = e.target.name;
     const value = e.target.value;
     setValues({ ...values, [name]: value });
@@ -33,8 +35,6 @@ export default function App() {
     setIsSubmit(true);
     if (!isSubmit) {
       console.log('israr hey');
-      console.log('values of check click' + chkBox);
-      console.log('values of check click innner' + values.chktest);
       const allData = { ...values };
       const requestOptions = {
         method: 'POST',
@@ -44,10 +44,10 @@ export default function App() {
       console.log(requestOptions.body);
       fetch('https://reqres.in/api/posts', requestOptions)
         .then((response) => {
-          console.log('post sucess' + response);
+          console.log('post sucess' + { ...response });
           response.json();
         })
-        //.then((data) => setValues(data.message))
+        //.then((data) => setValues(data[0].name))
         .catch((error) => {
           console.log('failed result' + error);
         });
@@ -69,16 +69,8 @@ export default function App() {
         <input
           type="text"
           onChange={handleChanges}
-          value={values.message}
-          name="message"
-        ></input>
-      </p>
-      <p>
-        <input
-          type="checkbox"
-          onChange={handleChanges}
-          value={values.chktest}
-          name="chktest"
+          value={values.name}
+          name="name"
         ></input>
       </p>
       <ul>
