@@ -62,8 +62,7 @@ export default function App() {
           value={input}
           onInput={(e) => setInput(e.target.value)}
         ></input>
-
-        <input type="submit" onClick={handleClick} />
+        <button onClick={handleClick}>Add Item</button>
       </p>
       <p>
         <input
