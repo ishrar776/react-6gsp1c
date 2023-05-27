@@ -73,9 +73,9 @@ export default function App() {
         ></input>
       </p>
       <ul>
-        {todoList.map((todo) => {
-          return <li id={todo.id}>{todo.task}</li>;
-        })}
+        {todoList.map((todo) => (
+          <li id={todo.id}>{todo.task}</li>
+        ))}
       </ul>
       <p>
         <input type="submit" onClick={submitdata} />
