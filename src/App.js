@@ -5,7 +5,7 @@ export default function App() {
   const [input, setInput] = useState('');
   const [todoList, setTodoList] = useState([]);
   const handleClick = (e) => {
-    e.preventDefault();
+    e.preventDefault(); 
     const id = todoList.length + 1;
     setTodoList((prev) => [
       ...prev,
